@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 https://www.kaggle.com/gemartin/load-data-reduce-memory-usage
 
