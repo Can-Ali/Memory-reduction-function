@@ -4,7 +4,6 @@ Note: If you have problems with this function try to discard Float16 part as
 there might be errors because of this data type:
 https://github.com/pandas-dev/pandas/issues/9220
 """
-
 def reduce_mem_usage(df, verbose=True):
     numerics = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
     start_mem = df.memory_usage().sum() / 1024**2
@@ -30,13 +29,9 @@ def reduce_mem_usage(df, verbose=True):
                 else:
                     df[col] = df[col].astype(np.float64)
 
- 
-
     end_mem = df.memory_usage().sum() / 1024**2
     print('Memory usage after optimization is: {:.2f} MB'.format(end_mem))
     print('Decreased by {:.1f}%'.format(100 * (start_mem - end_mem) / start_mem))
-
- 
 
     return df
 
